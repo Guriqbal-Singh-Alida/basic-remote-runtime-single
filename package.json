@@ -1,12 +1,21 @@
 {
+  "name": "@alida/cc",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "lerna run --scope @basic-host-remote/* --parallel start",
-    "build": "lerna run --scope @basic-host-remote/* build",
-    "serve": "lerna run --scope @basic-host-remote/* --parallel serve",
-    "clean": "lerna run --scope @basic-host-remote/* --parallel clean"
-  },
+  "author": "Alida <info@alida.com>",
+  "license": "none",
   "devDependencies": {
-    "lerna": "3.22.1"
-  }
+    "concurrently": "^5.3.0",
+    "rimraf": "^3.0.2",
+    "wsrun": "^5.2.4"
+  },
+  "scripts": {
+    "start": "concurrently \"wsrun --parallel start\"",
+    "start:live": "concurrently \"wsrun --parallel start:live\"",
+    "clean": "rimraf -fr apps/**/dist",
+    "wipe": "rimraf -fr node_modules apps/**/node_modules yarn.lock apps/**/yarn.lock apps/**/dist"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
 }

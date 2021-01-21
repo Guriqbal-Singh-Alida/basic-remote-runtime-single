@@ -1,11 +1,12 @@
 {
-  "name": "@basic-host-remote/app2",
+  "name": "@basic-host-remote/app1",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
     "@babel/core": "7.12.10",
     "@babel/preset-react": "7.12.10",
     "babel-loader": "8.2.2",
+    "bundle-loader": "0.5.6",
     "html-webpack-plugin": "4.5.1",
     "serve": "11.3.2",
     "webpack": "5.14.0",
@@ -13,9 +14,9 @@
     "webpack-dev-server": "3.11.2"
   },
   "scripts": {
-    "start": "webpack-cli serve",
+    "start": "webpack-cli serve --open",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3002",
+    "serve": "serve dist -p 5001",
     "clean": "rm -rf dist"
   },
   "dependencies": {
