@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const  MergeRuntime  = require("./plugins/merge-runtime");
 const path = require("path");
 
 module.exports = {
@@ -32,6 +33,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new MergeRuntime({ filename: "remoteEntry" }),
     new ModuleFederationPlugin({
       name: "app2",
       filename: "remoteEntry.js",
