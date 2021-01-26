@@ -1,6 +1,7 @@
 //Reference: https://github.com/module-federation/nextjs-mf
 
-ConcatSource = require('webpack-sources/lib/ConcatSource'),
+const ConcatSource = require('webpack-sources/lib/ConcatSource');
+
 module.exports = class ModuleFedSingleRuntimePlugin {
   constructor(options) {
     this._options = {fileName: 'remoteEntry.js', ...options};
