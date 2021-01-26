@@ -13,7 +13,7 @@ module.exports = class ModuleFedSingleRuntimePlugin {
   // Define `apply` as its prototype method which is supplied with compiler as its argument
   apply(compiler) {
     // Specify the event hook to attach to
-    compiler.hooks.emit.tap('EnableSingleRunTimeForFederationPlugin', (compilation) => {
+    compiler.hooks.emit.tap('ModuleFedSingleRuntimePlugin', (compilation) => {
       const { assets, namedChunks } = compilation;
       const runtimeChunk = namedChunks.get('runtime');
       if (!runtimeChunk) {
